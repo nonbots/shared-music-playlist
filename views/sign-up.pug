@@ -1,0 +1,18 @@
+extends layout
+block headerTitle
+    h1 Sign Up
+block content
+    form(action="/sign-up" method="post")
+        label(for="firstName") First name 
+        input(id="firstName" type="text" name="firstName") 
+        label(for="lastName") Last name 
+        input(id="lastName" type="text" name="lastName") 
+        label(for="userName") User name 
+        input(id="userName" type="text" name="userName") 
+        label(for="password") Password
+        input(id="password" type="password" name="password")
+        input(type="submit")
+block navLinks
+    a(href="home") Cancel
+     
+

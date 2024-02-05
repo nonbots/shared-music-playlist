@@ -1,0 +1,16 @@
+extends layout
+
+block headerTitle
+    h1 Edit Song 
+block navLinks
+    form(action="edit-song/upVote" method="post") 
+        input(type="submit" value="Up vote")
+    form(action="edit-song/downVote" method="post")
+        input(type="submit" value="Down vote")
+    form(action="edit-song/play" method="post") 
+        input(type="submit" value="Play")
+    form(action="edit-song/skip" method="post")
+        input(type="submit" value="Skip")
+    form(action="edit-song/delete" method="post")
+        input(type="submit" value="Delete")
+    a(href="/playlist") Cancel

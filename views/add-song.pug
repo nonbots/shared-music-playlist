@@ -1,0 +1,8 @@
+extends layout
+
+block headerTitle
+    h1 Add Song 
+block navLinks
+    a(href="/playlist") Cancel
+    form(action="/add-song" method="post")
+        input(type="submit")

@@ -1,0 +1,13 @@
+extends layout
+block headerTitle
+    h1 Sign In
+block content
+    form(action="login" method="post")
+        label(for="userName") User name
+        input(id="userName" type="text" name="userName") 
+        label(for="password") Password
+        input(id="password" type="password" name="password")
+        input(type="submit")
+block navLinks
+    a(href="home") Cancel
+ 

@@ -1,3 +1,30 @@
-.bWrap{
-    margin: 0 auto;
+body{
+    display:flex;
+    width:100%;
+    height:100vh;
+    justify-content:center;
+    align-items:center;
 }
+.bWrap{
+    display:flex;
+    width: 90%;
+    flex-direction: column;
+    justify-content:center;
+}
+.navBottom{
+    display:flex;
+    width:100%;
+    justify-content:space-evenly;
+    margin-top: 5%;
+}
+a{
+    font-family:'Roboto';
+    font-size:3rem;
+    font-weight:500;
+}
+.appTitle{
+    font-family: 'Roboto', 'san-serif';
+    font-weight: 900;
+    font-size: 10rem;
+    text-align: center;
+}   

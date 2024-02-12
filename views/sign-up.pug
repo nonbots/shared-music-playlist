@@ -1,8 +1,8 @@
 extends layout
-block headerTitle
-    h1 Sign Up
+block title
+    h1(class="pageTitle") Sign Up
 block content
-    form(action="/sign-up" method="post")
+    form(class="inputForm" action="/sign-up" method="post")
         label(for="firstName") First name 
         input(id="firstName" type="text" name="firstName") 
         label(for="lastName") Last name 
@@ -12,7 +12,7 @@ block content
         label(for="password") Password
         input(id="password" type="password" name="password")
         input(type="submit")
-block navLinks
+block navBottom 
     a(href="home") Cancel
      
 

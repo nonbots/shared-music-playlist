@@ -1,16 +1,16 @@
 extends layout
 
-block headerTitle
+block title
     h1 Playlist 
-block navLinks 
+block navTop 
     a(href="users-roster") Users
-    form(action="/playlist/sign-out" method="post")
+    form(class="buttonForm" action="/playlist/sign-out" method="post")
         input(type="submit" value="Sign out")
 block content
     a(href="edit-song") 
-        div
+        .songCard
             h6 Title 
             p Requested by: user 
             p Rating: 
-        form(action="/playlist/add" method="post")
+        form(class="buttonForm" action="/playlist/add" method="post")
             input(type="submit" value="Add")

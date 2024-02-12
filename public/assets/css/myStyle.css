@@ -4,6 +4,8 @@ body{
     height:100vh;
     justify-content:center;
     align-items:center;
+    font-family: 'Roboto', 'sans-serif';
+    text-align: center;
 }
 .bWrap{
     display:flex;
@@ -15,16 +17,31 @@ body{
     display:flex;
     width:100%;
     justify-content:space-evenly;
-    margin-top: 5%;
+    margin-top: 5rem;
 }
 a{
-    font-family:'Roboto';
     font-size:3rem;
     font-weight:500;
 }
 .appTitle{
-    font-family: 'Roboto', 'san-serif';
     font-weight: 900;
     font-size: 10rem;
-    text-align: center;
+}
+main{
+    display:flex;
+    width:100%;
+    justify-content:center;
+}
+.inputForm{
+    display:flex;
+    flex-direction:column;
+    width:fit-content;        
 }   
+.pageTitle{
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 5rem;
+}
+input{
+    margin-bottom: 1rem;
+}

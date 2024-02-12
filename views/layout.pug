@@ -1,11 +1,20 @@
 doctype html
 html(lang="en")
-head 
-    title Music Sharing Playlist
-    meta(charset="UTF-8")
-    link(rel="stylesheet" href="/assets/css/reset.css")
-header 
-    block headerTitle 
-body
-    block content
-    block navLinks
+    head 
+        title Music Sharing Playlist
+        meta(charset="UTF-8")
+        link(rel="stylesheet" href="/assets/css/reset.css")
+        link(rel="stylesheet" href="/assets/css/reset.css")
+    body
+        .bWrap
+            header 
+                block title 
+                nav
+                    div
+                        block navTop
+            main
+                block content
+            footer
+                nav
+                    div
+                        block navBottom   

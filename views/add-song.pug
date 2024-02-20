@@ -1,8 +1,12 @@
 extends layout
 
-block headerTitle
-    h1 Add Song 
-block navLinks
-    a(href="/playlist") Cancel
-    form(action="/add-song" method="post")
+block title
+    h1(class="pageTitle") Add Song 
+block content
+    form(class="inputForm" action="/add-song" method="post")
+        label Youtube link
+        input(type="text")
         input(type="submit")
+block navBottom
+    a(href="/playlist") Cancel
+

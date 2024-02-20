@@ -1,16 +1,23 @@
 extends layout
 
 block title
-    h1 Playlist 
+    h1(class="pageTitle") Playlist 
 block navTop 
-    a(href="users-roster") Users
+    a(class="navLink" href="users-roster") Users
     form(class="buttonForm" action="/playlist/sign-out" method="post")
         input(type="submit" value="Sign out")
 block content
-    a(href="edit-song") 
-        .songCard
-            h6 Title 
-            p Requested by: user 
-            p Rating: 
-        form(class="buttonForm" action="/playlist/add" method="post")
-            input(type="submit" value="Add")
+    .playListWrap
+        a(href="edit-song") 
+            .songCard
+                p Title:    
+                p Requested by:
+                p Rating: 
+        a(href="edit-song") 
+            .songCard
+                p Title:    
+                p Requested by:
+                p  Rating: 
+    form(class="buttonForm" action="/playlist/add" method="post")
+        input(type="submit" value="Add")
+

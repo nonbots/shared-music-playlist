@@ -15,6 +15,11 @@ html(lang="en")
                 nav
                     .navTopWrap 
                         block navTop
+            .errorWrap
+                if errorMessage
+                    .flash.error
+                        p= errorMessage
+  
             main
                 block content
             footer

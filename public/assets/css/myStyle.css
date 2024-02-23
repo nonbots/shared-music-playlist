@@ -95,3 +95,17 @@ footer{
     display:flex;
     justify-content:center;
 }
+.errorWrap{
+    margin-bottom: 1rem;
+}
+.flash{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.error {
+    background-color: #ff000038;
+    border: 1px dashed red;
+    border-radius: 1rem;
+}

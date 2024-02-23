@@ -3,7 +3,9 @@ extends layout
 block title
     h1(class="pageTitle") Playlist 
 block navTop 
-    a(class="navLink" href="users-roster") Users
+    .navTopChild
+        p= userName
+        a(class="navLink" href="users-roster") Users
     form(class="buttonForm" action="/playlist/sign-out" method="post")
         input(type="submit" value="Sign out")
 block content

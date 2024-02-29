@@ -4,22 +4,18 @@ block title
     h1(class="pageTitle") Playlist 
 block navTop 
     .navTopChild
-        p= userName
+        p= userLogin.userName
         a(class="navLink" href="users-roster") Users
     form(class="buttonForm" action="/playlist/sign-out" method="post")
         input(type="submit" value="Sign out")
 block content
     .playListWrap
-        a(href="edit-song") 
-            .songCard
-                p Title:    
-                p Requested by:
-                p Rating: 
-        a(href="edit-song") 
-            .songCard
-                p Title:    
-                p Requested by:
-                p  Rating: 
-    form(class="buttonForm" action="/playlist/add" method="post")
-        input(type="submit" value="Add")
+        each song in playlist
+            a(href=`/playlist/edit-song/${song.id}`) 
+                .songCard
+                    p Title: #{song.title}   
+                    p Requested by: #{song.requestedBy}
+                    p Rating: #{song.likeRating} 
+        form(class="buttonForm" action="/playlist/add" method="get")
+            input(type="submit" value="Add")
 

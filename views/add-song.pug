@@ -3,9 +3,9 @@ extends layout
 block title
     h1(class="pageTitle") Add Song 
 block content
-    form(class="inputForm" action="/add-song" method="post")
+    form(class="inputForm" action="/playlist/add" method="post")
         label Youtube link
-        input(type="text")
+        input(type="text" name="link")
         input(type="submit")
 block navBottom
     a(href="/playlist") Cancel

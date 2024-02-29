@@ -3,7 +3,7 @@ extends layout
 block title
     h1(class="pageTitle") Edit Song
 block content
-    p This is the video title
+    p= song.title 
     .voteWrap
         form(action="edit-song/upVote" method="post") 
             input(type="submit" value="Up vote")

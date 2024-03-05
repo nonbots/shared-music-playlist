@@ -3,7 +3,6 @@ body{
     width:100%;
     height:100vh;
     justify-content:center;
-    align-items:center;
     font-family: 'Roboto', 'sans-serif';
     font-size: 1rem;
     text-align: center;
@@ -12,7 +11,6 @@ body{
     display:flex;
     width: 90%;
     flex-direction: column;
-    justify-content:center;
 }
 .navBottom{
     display:flex;
@@ -37,15 +35,23 @@ main{
     align-items:center;
     row-gap: 2rem;
 }
+.content{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+#player{
+    width:200px;
+    height:200px;
+    background-color: grey;
+}
 .playListWrap{
     display:flex;
     flex-direction:column;
-    width:50%;
-    row-gap: 1rem;    
+    width:75%;
 }
 .songCard{
-    border: 1px solid #0680a8;
-    border-radius: 1rem;
+    border-top: 1px solid #0680a8;
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -53,7 +59,7 @@ main{
 }
 .navTopWrap{
     display:flex;
-    width:50%;
+    width:75%;
     justify-content: space-between;
 }
 .inputForm{
@@ -71,12 +77,18 @@ input{
 }
 
 p{
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-align: left;
+}
+.songInfo {
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 1rem;
+    font-weight: 300;
 }
 nav{
     display:flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 .navLink{
     font-size: 1.5rem;

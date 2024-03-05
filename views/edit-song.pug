@@ -12,10 +12,10 @@ block content
 
 block navBottom
     .songActionWrap
-        form(action="edit-song/play" method="post") 
+        form(action=`/playlist/edit-song/play/${song.id}` method="get") 
             input(type="submit" value="Play")
-        form(action="edit-song/skip" method="post")
+        form(action=`playlist/edit-song/skip/${song.id}` method="get")
             input(type="submit" value="Skip")
-        form(action="edit-song/delete" method="post")
+        form(action=`/playlist/edit-song/delete/${song.id}` method="post")
             input(type="submit" value="Delete")
     a(href="/playlist") Cancel

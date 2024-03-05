@@ -1,5 +1,4 @@
 extends layout
-
 block title
     h1(class="pageTitle") Playlist 
 block navTop 
@@ -9,13 +8,19 @@ block navTop
     form(class="buttonForm" action="/playlist/sign-out" method="post")
         input(type="submit" value="Sign out")
 block content
-    .playListWrap
-        each song in playlist
-            a(href=`/playlist/edit-song/${song.id}`) 
-                .songCard
-                    p Title: #{song.title}   
-                    p Requested by: #{song.requestedBy}
-                    p Rating: #{song.likeRating} 
-        form(class="buttonForm" action="/playlist/add" method="get")
-            input(type="submit" value="Add")
+    .content
+        #player
+        .playListWrap
+            each song in playlist
+                a(href=`/playlist/edit-song/${song.id}`) 
+                    .songCard
+                        input(type="hidden" id="videoId" value=`${videoId}`)
+                        input(type="hidden" id="videoIds" value=`${videoIds}`)
+                        p Title: #{song.title}   
+                        .songInfo
+                            p Requested by: #{song.requestedBy}
+                            p Rating: #{song.likeRating} 
+block navBottom
+    form(class="buttonForm" action="/playlist/add" method="get")
+        input(type="submit" value="Add")
 

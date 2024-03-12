@@ -1,26 +1,37 @@
 extends layout
+
 block title
     h1(class="pageTitle") Playlist 
+    input(type="hidden" id="videoId" value=`${videoId}`)
+    input(type="hidden" id="videoIds" value=`${videoIds}`)
 block navTop 
-    .navTopChild
+    .navTopLeft
         p= userLogin.userName
-        a(class="navLink" href="users-roster") Users
-    form(class="buttonForm" action="/playlist/sign-out" method="post")
-        input(type="submit" value="Sign out")
+        p #{playlist.length} song(s)  Total Duration
+    .navTopRight
+        a(class="navLinkRoster" href="users-roster") Users
+        form(class="buttonForm" action="/playlist/sign-out" method="post")
+            input(type="submit" value="Sign out")
 block content
     .content
-        #player
         .playListWrap
+            input(type="hidden" id="playlist" value=`${playlist}`)
             each song in playlist
                 a(href=`/playlist/edit-song/${song.id}`) 
                     .songCard
-                        input(type="hidden" id="videoId" value=`${videoId}`)
-                        input(type="hidden" id="videoIds" value=`${videoIds}`)
-                        p Title: #{song.title}   
-                        .songInfo
-                            p Requested by: #{song.requestedBy}
-                            p Rating: #{song.likeRating} 
-block navBottom
-    form(class="buttonForm" action="/playlist/add" method="get")
-        input(type="submit" value="Add")
+                        .songNumber
+                            h3 #{playlist.indexOf(song) + 1}
+                        .songDescription
+                            p= song.title   
+                            .songInfo
+                                p Requested by: #{song.requestedBy}
+                                p Duration: #{song.duration}
+                                p Rating: #{song.likeRating} 
+        .addSongWrap
+            #player
+            form(class="inputForm" action="/playlist/add" method="post")
+                label Youtube link
+                input(type="text" name="link")
+                input(type="submit" value="Add")
+
 

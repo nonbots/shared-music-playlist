@@ -12,23 +12,26 @@ console.log("IFRAME IS RUNNING");
   let videoIds;//"id1,id2"
   let videoId;
   let idIndex;
+  let playlist;
   function getIdIndex() {
      return videoIds.indexOf(videoId);
   }
 
   function setNextIdIndex() {
-      console.log("current INDEX", idIndex, "LENGTH OF IDS", videoIds.length); 
+      console.log("current INDEX", idIndex, "LENGTH OF IDS", videoIds.length);
       if (idIndex >= videoIds.length - 1) {
           idIndex = 0;
       } else {
           idIndex += 1
       }
-  } 
+  }
   function onYouTubeIframeAPIReady() {
+    playlist = document.getElementById('playlist').value.split(",");
     videoId = document.getElementById('videoId').value;
     videoIds = document.getElementById('videoIds').value.split(",");
     console.log("THIS IS THE VIDEO ID IN IFRAME", videoId);
     console.log("THESE ARE THE IDS IN IFRAME", videoIds);
+    console.log(playlist);
     idIndex = getIdIndex();
     player = new YT.Player('player', {
       height: '390',
@@ -62,4 +65,4 @@ console.log("IFRAME IS RUNNING");
         player.loadVideoById(videoIds[idIndex]);
     }
   }
-  
+

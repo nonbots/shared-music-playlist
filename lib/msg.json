@@ -1,0 +1,9 @@
+{
+  "isEmpty": "An input field or more is empty.",
+  "exceeds": "An input field or more exceeds 20 characters in length.",
+  "isNotMusic": "Video is not a song.",
+  "userNotUnique": "User name is already taken.",
+  "songNotUnique": "Song was already added.",
+  "invalidLogin": "Invalid username and/or password."
+}
+

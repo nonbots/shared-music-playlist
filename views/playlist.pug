@@ -15,16 +15,15 @@ block navTop
 block content
     .content
         .playListWrap
-            input(type="hidden" id="playlist" value=`${playlist}`)
             each song in playlist
                 a(href=`/playlist/edit-song/${song.id}`) 
-                    .songCard
+                    div(class=song.isCurSong ? "curCard" : "songCard")
                         .songNumber
-                            h3 #{playlist.indexOf(song) + 1}
+                            p #{playlist.indexOf(song) + 1}
                         .songDescription
                             p= song.title   
                             .songInfo
-                                p Requested by: #{song.requestedBy}
+                                p Added by: #{song.requestedBy}
                                 p Duration: #{song.duration}
                                 p Rating: #{song.likeRating} 
         .addSongWrap

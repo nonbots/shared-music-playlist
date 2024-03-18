@@ -7,6 +7,7 @@ body{
     font-size: 1rem;
     text-align: center;
     background-color: black;
+    color: white;
 }
 .bWrap{
     display:flex;
@@ -35,11 +36,13 @@ main{
     flex-direction:column;
     align-items:center;
     row-gap: 2rem;
+    height: 75%;
 }
 .content{
     display: flex;
     width: 100%;
     justify-content: space-between;
+    height:100%;
 }
 #player{
     width:200px;
@@ -53,9 +56,18 @@ main{
     align-items: center;
 }
 .playListWrap{
-    d#800080;isplay:flex;
+    display:flex;
     flex-direction:column;
     width:75%;
+    overflow:scroll;
+    height: 100%;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #0680a8 black;
+}
+.info {
+  color: grey;
+  font-size: .85rem;
 }
 .songCard{
     border-top: 1px solid #0680a8;

@@ -23,9 +23,9 @@ block content
                         .songDescription
                             p= song.title   
                             .songInfo
-                                p Added by: #{song.requestedBy}
-                                p Duration: #{song.duration}
-                                p Rating: #{song.likeRating} 
+                                p(class="info") Added by: #{song.requestedBy}
+                                p(class="info") Duration: #{song.duration}
+                                p(class="info") Rating: #{song.likeRating} 
         .addSongWrap
             #player
             form(class="inputForm" action="/playlist/add" method="post")

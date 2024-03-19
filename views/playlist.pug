@@ -16,16 +16,19 @@ block content
     .content
         .playListWrap
             each song in playlist
-                a(href=`/playlist/edit-song/${song.id}`) 
+                a(href=`/playlist/edit-song/play/${song.id}`) 
                     div(class=song.isCurSong ? "curCard" : "songCard")
-                        .songNumber
-                            p #{playlist.indexOf(song) + 1}
-                        .songDescription
-                            p= song.title   
-                            .songInfo
-                                p(class="info") Added by: #{song.requestedBy}
-                                p(class="info") Duration: #{song.duration}
-                                p(class="info") Rating: #{song.likeRating} 
+                        .songWrap
+                            .songNumber
+                                p #{playlist.indexOf(song) + 1}
+                            .songDescription
+                                p= song.title   
+                                .songInfo
+                                    p(class="info") Added by: #{song.requestedBy}
+                                    p(class="info") Duration: #{song.duration}
+                                    p(class="info") Rating: #{song.likeRating} 
+                        form(class="delete" action=`/playlist/edit-song/delete/${song.id}` method="post")
+                            input(class="deleteBtn" type="submit" value="X")
         .addSongWrap
             #player
             form(class="inputForm" action="/playlist/add" method="post")

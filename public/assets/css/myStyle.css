@@ -65,24 +65,39 @@ main{
     scrollbar-width: thin;
     scrollbar-color: #0680a8 black;
 }
+.songWrap{
+    display: flex;
+    column-gap: 1rem;
+}
+.songNumber{
+      display: flex;
+    align-items: center;
+  }
 .info {
   color: grey;
   font-size: .85rem;
 }
 .songCard{
     border-top: 1px solid #0680a8;
-    padding: 1rem;
+    padding: .5rem;
     display: flex;
     flex-direction: row;
     column-gap: 1rem;
+    justify-content: space-between;
 }
 .curCard{
     border-top: 1px solid #0680a8;
     background-color: #1434A4;
-    padding: 1rem;
+    padding: .5rem;
     display: flex;
     flex-direction: row;
     column-gap: 1rem;
+    justify-content: space-between;
+}
+.deleteBtn {
+  background-color: transparent;
+  border: none;
+  color: grey;
 }
 .navLinkRoster{
   font-size: 1rem;

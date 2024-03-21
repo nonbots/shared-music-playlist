@@ -15,24 +15,27 @@ block navTop
 block content
     .content
         .playListWrap
-            each song in playlist
-                a(href=`/playlist/edit-song/play/${song.id}`) 
-                    div(class=song.isCurSong ? "curCard" : "songCard")
-                        .songWrap
-                            .songNumber
-                                p #{playlist.indexOf(song) + 1}
-                            .songDescription
-                                p= song.title   
-                                .songInfo
-                                    p(class="info") Added by: #{song.requestedBy}
-                                    p(class="info") Duration: #{song.duration}
-                                    p(class="info") Rating: #{song.likeRating} 
-                                    form(class="info" action=`/playlist/edit-song/upVote/${song.id}` method="post")
-                                        input(class="likeBtn" type="submit" value="<3")
-                                    form(class="info" action=`/playlist/edit-song/downVote/${song.id}` method="post")
-                                        input(class="likeBtn" type="submit" value="</3")
-                        form(class="delete" action=`/playlist/edit-song/delete/${song.id}` method="post")
-                            input(class="deleteBtn" type="submit" value="X")
+            if playlist.length === 0 
+                p Playlist is empty. Add a song.
+            else 
+                each song in playlist
+                    a(href=`/playlist/edit-song/play/${song.id}`) 
+                        div(class=song.isCurSong ? "curCard" : "songCard")
+                            .songWrap
+                                .songNumber
+                                    p #{playlist.indexOf(song) + 1}
+                                .songDescription
+                                    p= song.title   
+                                    .songInfo
+                                        p(class="info") Added by: #{song.requestedBy}
+                                        p(class="info") Duration: #{song.duration}
+                                        p(class="info") Rating: #{song.likeRating} 
+                                        form(class="info" action=`/playlist/edit-song/upVote/${song.id}` method="post")
+                                            input(class="likeBtn" type="submit" value="<3")
+                                        form(class="info" action=`/playlist/edit-song/downVote/${song.id}` method="post")
+                                            input(class="likeBtn" type="submit" value="</3")
+                            form(class="delete" action=`/playlist/edit-song/delete/${song.id}` method="post")
+                                input(class="deleteBtn" type="submit" value="X")
         .addSongWrap
             #player
             form(class="inputForm" action="/playlist/add" method="post")

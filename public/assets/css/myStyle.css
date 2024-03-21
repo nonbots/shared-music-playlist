@@ -73,6 +73,10 @@ main{
       display: flex;
     align-items: center;
   }
+.likeRating {
+  display: flex;
+  align-items: center;
+}
 .info {
   color: grey;
   font-size: .85rem;
@@ -93,6 +97,16 @@ main{
     flex-direction: row;
     column-gap: 1rem;
     justify-content: space-between;
+}
+.likeBtn {
+  background-color: transparent;
+  color: grey;
+  border-radius: 50%;
+}
+.delete {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 .deleteBtn {
   background-color: transparent;
@@ -117,7 +131,7 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    row-gap: 0.25rem;
+    row-gap: 0.5rem;
   }
 .navTopWrap{
     display:flex;

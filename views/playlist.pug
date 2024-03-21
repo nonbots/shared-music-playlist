@@ -27,6 +27,10 @@ block content
                                     p(class="info") Added by: #{song.requestedBy}
                                     p(class="info") Duration: #{song.duration}
                                     p(class="info") Rating: #{song.likeRating} 
+                                    form(class="info" action=`/playlist/edit-song/upVote/${song.id}` method="post")
+                                        input(class="likeBtn" type="submit" value="<3")
+                                    form(class="info" action=`/playlist/edit-song/downVote/${song.id}` method="post")
+                                        input(class="likeBtn" type="submit" value="</3")
                         form(class="delete" action=`/playlist/edit-song/delete/${song.id}` method="post")
                             input(class="deleteBtn" type="submit" value="X")
         .addSongWrap

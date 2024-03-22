@@ -7,7 +7,7 @@ block title
 block navTop 
     .navTopLeft
         p= userLogin.userName
-        p #{playlist.length} song(s)  Total Duration
+        p #{playlist.length} song(s)  Total Duration: #{totalDuration}
     .navTopRight
         a(class="navLinkRoster" href="users-roster") Users
         form(class="buttonForm" action="/playlist/sign-out" method="post")
